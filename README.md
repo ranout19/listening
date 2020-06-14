@@ -13,5 +13,6 @@ Fitur aplikasi :
 - Tampil soal sesuai soal aktif
 
 Akses : 
+- Buat database dengan nama listening lalu import file listening.sql
 - Halaman utama : localhost/listening
 - Halaman admin : localhost/listening/admin
