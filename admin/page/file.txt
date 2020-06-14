@@ -1,0 +1,32 @@
+$sql=mysqli_query($koneksi, "SELECT * FROM allsoal INNER JOIN bahasa ON allsoal.id_bahasa=bahasa.id_bahasa INNER JOIN soal ON allsoal.id_kelas=soal.id_kelas INNER JOIN kelas ON allsoal.id_kelas=kelas.id_kelas WHERE status = 1");
+
+$sql=mysqli_query($koneksi, "UPDATE soal SET soal='$soal', id_bahasa='$bahasa', id_kelas='$kelas' WHERE id_soal='$ids'");
+                if ($sql) {
+                    ?>
+                    <script>
+                        Swal.fire({
+                          type: 'success',
+                          title: 'Berhasil!',
+                          text: 'Data diubah',
+                          showConfirmButton: false,
+                          timer: 2000
+                        }).then(()=>{
+                            location.href='?page=soal'
+                        });
+                    </script>
+                    <?php
+                }else{
+                    ?>
+                    <script>
+                        Swal.fire({
+                          type: 'error',
+                          title: 'Gagal!',
+                          text: 'Data gagal diubah',
+                          showConfirmButton: false,
+                          timer: 2000
+                        }).then(()=>{
+                            location.href='?page=soal'
+                        });
+                    </script>
+                    <?php
+                }
